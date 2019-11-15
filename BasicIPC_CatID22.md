@@ -7,9 +7,10 @@ A race condition describes a scenario where two processes try to access and/or c
 
 ## Disabling interrupts
 ### Why is it impossible to achieve Mutual Exclusion via disabling interrupts on a multi-core machine?
+Disabling interrupts on a single core might work, however, the other cores are **still able to access and modify the shared memory**.
 
 ### Why is it dangerous to give user processes the power to disable interrupts?
-
+Bad code could lead to bugs: If an infinite loop occurs after disabling interrupts, the whole system would have to be restarted because every other process is "on hold".
 
 ## Peterson's Solution
 ### Document the two scenarios of the handout
