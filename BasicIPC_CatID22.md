@@ -30,4 +30,4 @@ This could lead to complications (for example an infinite loop).
 ### What does the "loser" variable mean and when does it have any effect?
 As the name already suggests, it's the "loser" - the second process. It can't enter the CR anymore because it's being blocked by the other process (the winner).
 
-### Extend the given functions for handling the processes
+### Extend the given functions for handling three processes
