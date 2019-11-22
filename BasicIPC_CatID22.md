@@ -14,9 +14,20 @@ Bad code could lead to bugs: If an infinite loop occurs after disabling interrup
 
 ## Peterson's Solution
 ### Document the two scenarios of the handout
+* Scenario 1
+  * Process 0 enters region - is within CR
+  * Process 1 wants to enter the CR
+  * Process 0 wants to leave the CR
+
+* Scenario 2
+  * Process 0 and Process 1 go through the whole loop almost simultaneously.
 
 ### Document the fail-scenario of strict alternation
+A process with a bigger time slice could go through 8 lines in a run while the other process might only be able to go through e.g. 2 lines per run.
+
+This could lead to complications (for example an infinite loop).
 
 ### What does the "loser" variable mean and when does it have any effect?
+As the name already suggests, it's the "loser" - the second process. It can't enter the CR anymore because it's being blocked by the other process (the winner).
 
 ### Extend the given functions for handling the processes
